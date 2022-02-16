@@ -22,7 +22,7 @@ class ForwardModel:
 
         reward = ht.get_score(gs, actual_player)   # Estimate the reward.
 
-        # if it is the fouth, check who is the winner of this round and move cards to won set
+        # if it is the fourth, check who is the winner of this round and move cards to won set
         if gs.playing_cards.len() == 4:
             winner = self.get_round_winner(gs.playing_cards, gs.trump_card, gs.turn)  # round winner
             gs.won_cards[winner].add_cards(gs.playing_cards.get_cards())              # cards to winner's won cards set
