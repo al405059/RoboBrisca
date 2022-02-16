@@ -1,15 +1,14 @@
-import math
-
 from Game.ForwardModel import ForwardModel
 from Game.Heuristic import Heuristic
 from Players.Player import Player
+from Game.Action import Action
+import random
 
 
 class OTLAPlayer(Player):
     def __init__(self):
         self.fm = ForwardModel()
         self.ht = Heuristic()
-
 
     def think(self, obs, budget):
         l = obs.get_list_actions()
@@ -42,7 +41,7 @@ class OTLAPlayer(Player):
                 n += 1
                 other += 1
 
-        values[j] += value * factor
-        j += 1
+            values[j] += value * factor
+            j += 1
 
 # buscar el maximo en values
